@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://api.tismi.com/service/goldfish/api",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      },
+      "logLevel": "debug"
+    }
+  }

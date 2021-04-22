@@ -1,0 +1,13 @@
+.mat-tab-link {
+  background-color: #333435;
+  color: #fff!important;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 100px;
+}
+
+.mat-tab-nav-bar {
+  background-color: #333435;
+  height: 155px;
+}

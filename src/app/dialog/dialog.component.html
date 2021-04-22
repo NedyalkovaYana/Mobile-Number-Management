@@ -1,0 +1,22 @@
+<div class="aligment">
+
+<h3>Please, select a Recipient:</h3>
+<div mat-dialog-content>
+ 
+    <mat-form-field appearance="fill">
+        
+        <mat-label>Recipient: </mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option value="CGI">CGI</mat-option>
+          <mat-option value="TISMI">TISMI</mat-option>
+          <mat-option value="SYSTEMX">SYSTEMX</mat-option>
+          <mat-option value="SYSTEMy">SYSTEMy</mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="selected" cdkFocusInitial>Ok</button>
+</div>
+
+</div>

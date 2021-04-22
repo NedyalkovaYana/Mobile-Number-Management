@@ -1,0 +1,94 @@
+<div class="report-wrapper">
+  <h1 class="report-title">Create new range</h1>
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="rangeForm">
+        <div fxLayout="column" fxLayoutAlign="start start">
+          <div fxFlex fxLayoutAlign="start center" fxLayoutGap="30px" style="padding-top: 40px; padding-bottom: 30px">
+            <mat-form-field appearance="outline">
+              <mat-label>Begin</mat-label>
+              <input matInput placeholder="The first number in the range"  formControlName="begin">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>End</mat-label>
+              <input matInput placeholder="The last number in the range"  formControlName="end">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Originator</mat-label>
+              <mat-select formControlName="originator">
+                <mat-option *ngFor="let sl of originatorList" [value]="sl">
+                  {{sl}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <mat-divider 
+                       style="margin-right: -16px; margin-left: -16px;width: calc(100% + 32px);"></mat-divider>
+          <div style="padding-top: 40px; padding-bottom: 30px">
+          </div>
+          <div fxLayoutAlign="end center" fxLayoutGap="20px" class="create-report-actions-wrapper" style="width: 100%">
+            <button [routerLink]="'/ranges'" mat-stroked-button class="filter-button">
+              Discard
+            </button>
+            <div class="button-row">
+              <button type="submit" [disabled]="!rangeForm.valid" mat-flat-button color="primary">Save range</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="example-container mat-elevation-z8">
+    <h2>Add new Range</h2>
+    <div class="example-loading-shade"
+          *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+      <form [formGroup]="rangeForm" (ngSubmit)="onFormSubmit()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Begin</mat-label>
+          <input matInput placeholder="Begin" formControlName="begin"
+                  [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!rangeForm.get('begin').valid && rangeForm.get('begin').touched">Please enter the first number in the range</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>End</mat-label>
+          <input matInput placeholder="End" formControlName="end"
+          [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!rangeForm.get('end').valid && rangeForm.get('end').touched">Please enter the last number in the range</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Originator</mat-label>
+          <mat-select formControlName="originator">
+            <mat-option *ngFor="let sl of originatorList" [value]="sl">
+              {{sl}}
+            </mat-option>
+          </mat-select>
+          <mat-error>
+            <span *ngIf="!rangeForm.get('originator').valid && rangeForm.get('originator').touched">Please select originator</span>
+          </mat-error>
+        </mat-form-field>
+        <div class="button-row">
+          <button type="submit" [disabled]="!rangeForm.valid" mat-flat-button color="primary">Save</button>
+        </div>
+      </form>
+    </mat-card>
+  </div> -->
